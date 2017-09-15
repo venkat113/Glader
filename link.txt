@@ -1,0 +1,83 @@
+https://fts.capgemini.com/private/16034425352712/demo.zip
+
+Buildship repo
+
+http://download.eclipse.org/buildship/updates/e45/releases/2.x
+
+Spring IDE repo
+
+http://dist.springsource.com/release/TOOLS/update/e4.5/
+
+
+inside cmd
+
+set JAVA_HOME=
+set GRADLE_HOME=
+
+set path=%JAVA_HOME%\bin;%GRADLE_HOME%\bin
+
+
+create New mule Project:
+-------------------------
+create new hello-world mule project-->select jdk
+
+open helo-world.xml file
+
+open mule palette
+
+search for http and drag and drop http into helo-world.xml
+
+select hTTP
+
+click on + symbol and give default configuration
+
+and give path like \flight and save
+
+
+then drag and drop set paylpad and enter some message
+
+now we will try in postman localhost:8081/flight it will show that message
+
+now remove set payload
+
+drag and drop database 
+
+select database select + and give configuraton details
+
+db.host = mudb.mulesoft-training.com 
+db.port = 3306 
+db.user = mule 
+db.password = mule 
+db.database = training 
+American table: american 
+American table version2: flights 
+Account table: accounts
+
+give operation select and enter query
+
+select * from american
+and test connection clicl on ok
+
+test result in postman its showing scema format
+
+now drahg and drop object ti Json
+
+now check result showing in json format
+
+if you want json in different fomat give som example json or cutom json format
+
+for that drag and drop transform message
+
+click on transform message and select input for that create example input json 
+
+select output for that create example output json
+
+now drag and drop input output for same values(sync with files)
+
+now you will get custuom output
+
+
+
+
+
+
