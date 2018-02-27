@@ -1,0 +1,94 @@
+class student:
+    def __init__(self):
+        self.name=""
+        self.rollNo=""
+        self.courseNames=""
+
+    def setName(self,name):
+        self.name=name
+    def getName(self):
+        return self.name
+
+    def setRollNo(self,rollNo):
+        self.rollNo=rollNo
+    def getRollNo(self):
+        return self.rollNo
+
+    def setCourseNames(self,courseNames):
+        self.courseNames=courseNames
+    def getCourseNames(self):
+        return self.courseNames
+
+
+from student import student
+
+Students={}
+
+class studentSchedular:
+
+
+    def addStudent(self,rollNo,name,courseNames):
+        Student=student()
+        Student.setRollNo(rollNo)
+        Student.setName(name)
+        Student.setCourseNames(courseNames)
+        Students.update({rollNo:Student})
+
+    def showAllStudents(self):
+        for rollNo in Students.keys():
+            Student=Students[rollNo]
+            print(Student.rollNo)
+            print(Student.name)
+            print(Student.courseNames)
+
+
+
+
+from studentSchedular import studentSchedular
+
+class Admin:
+    def showMenu(self):
+        self.StudentSchedular=studentSchedular()
+        print("Choose from the Menu below")
+        print("1. Add Student")
+        print("2. Show Students")
+        print("3. Exit")
+
+        while(True):
+            x = input("Enter the choice")
+
+            if x=="1":
+
+                rollNo=input("enter the roll no")
+                name=input("enter the name")
+                cnt=input("enter the no of courses")
+                courses=[]
+                for i in range(0,int(cnt)):
+                    course=input("enter the course name")
+                    courses.append(course)
+                self.StudentSchedular.addStudent(rollNo,name,courses)
+                self.StudentSchedular.showAllStudents()
+
+            elif x=="2":
+                self.StudentSchedular.showAllStudents()
+
+            else:
+                break;
+
+
+admin=Admin()
+admin.showMenu()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
